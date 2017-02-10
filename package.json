@@ -1,7 +1,7 @@
 {
   "name": "joiless",
   "description": "Utility functions for using Joi without using Joi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Isaac Whitfield",
   "maintainers": [
     "Isaac Whitfield"
