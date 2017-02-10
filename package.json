@@ -1,0 +1,43 @@
+{
+  "name": "joiless",
+  "description": "Utility functions for using Joi without using Joi",
+  "version": "1.0.0",
+  "author": "Isaac Whitfield",
+  "maintainers": [
+    "Isaac Whitfield"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zackehh/joiless.git"
+  },
+  "bugs": {
+    "email": "iw@zackehh.com",
+    "url": "http://github.com/zackehh/joiless/issues"
+  },
+  "keywords": [
+    "joi",
+    "json",
+    "schema"
+  ],
+  "scripts": {
+    "gulp": "gulp",
+    "lint": "gulp lint",
+    "test": "gulp ci"
+  },
+  "dependencies": {
+    "joi": "~10.2.2",
+    "lodash.isfunction": "~3.0.8",
+    "pascal-case": "~2.0.0"
+  },
+  "devDependencies": {
+    "dep-validate": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "should": "^11.2.0"
+  }
+}
