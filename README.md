@@ -7,12 +7,14 @@ Utility functions for using Joi without using Joi.
 Joiless lives on npm, so just install it via the command line and you're good to go.
 
 ```
-$ npm install --save joiless
+$ npm install --save joi joiless
 ```
+
+You need to install `joi` itself as this module does not include it as a production dependency (so you can use your own `joi` version). If you try a version which has an issue caused by the module, please file an issue.
 
 ### Example
 
-I love [Joi](https://github.com/hapijs/joi)'s validation, and I love [Hapi](https://github.com/hapijs/hapi) so I use Joi all the time. Unfortunately I hate Joi's chaining, so I wrote Joiless to assist. Basically, it's Joi using JSON.
+I love [Joi](https://github.com/hapijs/joi)'s validation, and I love [Hapi](https://github.com/hapijs/hapi), so I use Joi all the time. Unfortunately I hate Joi's chaining, so I wrote Joiless to assist. Basically, it's Joi using JSON.
 
 Here's an example (both of these are identical, and are in fact a test case in this repo):
 
