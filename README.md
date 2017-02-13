@@ -62,6 +62,8 @@ Joiless.spec('string', {
 
 ### Other Usage
 
+#### Attaching Child References
+
 If you make a complex schema, you can use `attach` to hook the child keys onto the parent.
 
 For example, in the snippet below you can reference `Record.Username` to pull back the username spec. This is done using `get`, it doesn't store the value twice.
@@ -90,4 +92,34 @@ var Record = Joiless.spec({
 
 // attach the children
 Joiless.attach(Record);
+```
+
+#### Extending Schemas
+
+Sometimes you wish to define a base schema, and then extend it to override some of the parent stuff. Naturally, the `spec` API doesn't fit here, so I added an `extend` in `v1.1`.
+
+Extension is easy, you just pass the schema to extend as first arg, and your spec overrides in the second argument.
+
+```javascript
+var Joi = require('joi');
+var Joiless = require('joiless');
+
+// define the base spec
+var base = Joiless.spec('object', {
+  keys: {
+    a: Joiless.spec('number'),
+    b: Joiless.spec('string')
+  }
+});
+
+// define our extension
+var extended = Joiless.extend(base, {
+  keys: {
+    a: Joiless.spec('string')
+  }
+});
+
+// run validation
+Joi.validate({ a: 'hello' }, base);     // fails
+Joi.validate({ a: 'hello' }, extended); // passes
 ```

@@ -466,7 +466,7 @@
       "always"
     ],
     "operator-linebreak": [
-      "warn",
+      "off",
       "before"
     ],
     "padded-blocks": [
