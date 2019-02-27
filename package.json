@@ -10,11 +10,11 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "http://github.com/zackehh/joiless.git"
+    "url": "http://github.com/whitfin/joiless.git"
   },
   "bugs": {
-    "email": "iw@zackehh.com",
-    "url": "http://github.com/zackehh/joiless/issues"
+    "email": "iw@whitfin.io",
+    "url": "http://github.com/whitfin/joiless/issues"
   },
   "keywords": [
     "joi",
