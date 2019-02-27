@@ -1,12 +1,12 @@
-var joi = require('joi');
-var should = require('should');
+const joi = require('joi');
+const should = require('should');
 
-var joiless = require('../');
+const joiless = require('../');
 
 suite('joiless', function () {
 
   test('attaching child references to a schema', function () {
-    var Schema = joi.object().keys({
+    let Schema = joi.object().keys({
       username: joi.string(),
       password: joi.string()
     });
@@ -24,20 +24,20 @@ suite('joiless', function () {
   });
 
   test('generating specifications from parameters', function () {
-    var joiSpec = joi
+    let joiSpec = joi
       .date()
       .description('The date (in milliseconds) that this crash last appeared')
       .timestamp('javascript')
       .default(Date.now, 'Current timestamp generation');
 
-    var ourSpec1 = joiless.spec({
+    let ourSpec1 = joiless.spec({
       type: 'date',
       description: 'The date (in milliseconds) that this crash last appeared',
       timestamp: 'javascript',
       default: [ Date.now, 'Current timestamp generation' ]
     });
 
-    var ourSpec2 = joiless.spec('date', {
+    let ourSpec2 = joiless.spec('date', {
       description: 'The date (in milliseconds) that this crash last appeared',
       timestamp: 'javascript',
       default: [ Date.now, 'Current timestamp generation' ]
@@ -48,21 +48,21 @@ suite('joiless', function () {
   });
 
   test('extending schemas using parameters', function () {
-    var base = joiless.spec('object', {
+    let base = joiless.spec('object', {
       keys: {
         a: joiless.spec('number'),
         b: joiless.spec('string')
       }
     });
 
-    var extended = joiless.extend(base, {
+    let extended = joiless.extend(base, {
       keys: {
         a: joiless.spec('string')
       }
     });
 
-    var result1 = joi.validate({ a: 'hello' }, base);
-    var result2 = joi.validate({ a: 'hello' }, extended);
+    let result1 = joi.validate({ a: 'hello' }, base);
+    let result2 = joi.validate({ a: 'hello' }, extended);
 
     should(result1).have.property('error');
     should(result1.error).be.an.Error();
