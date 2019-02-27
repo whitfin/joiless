@@ -1,4 +1,4 @@
-# Joiless [![Build Status](https://travis-ci.org/zackehh/joiless.svg?branch=master)](https://travis-ci.org/zackehh/joiless)
+# Joiless [![Build Status](https://travis-ci.org/whitfin/joiless.svg?branch=master)](https://travis-ci.org/whitfin/joiless)
 
 Utility functions for using Joi without using Joi.
 
